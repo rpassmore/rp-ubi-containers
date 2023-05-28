@@ -1,0 +1,36 @@
+include:
+  - template: Auto-DevOps.gitlab-ci.yml
+
+.build container:
+  stage: build
+  extends: build
+  variables:
+#    DOCKERFILE_PATH: nginx/Dockerfile
+  script:
+    - |
+      if [[ -z "$CI_COMMIT_TAG" ]]; then
+        export CI_APPLICATION_REPOSITORY=${CI_APPLICATION_REPOSITORY:-$CI_REGISTRY_IMAGE/$CI_COMMIT_REF_SLUG/$CONTAINER_NAME}
+        export CI_APPLICATION_TAG=${CI_APPLICATION_TAG:-$CI_COMMIT_SHA}
+      else
+        export CI_APPLICATION_REPOSITORY=${CI_APPLICATION_REPOSITORY:-$CI_REGISTRY_IMAGE/$CONTAINER_NAME}
+        export CI_APPLICATION_TAG=${CI_APPLICATION_TAG:-$CI_COMMIT_TAG}
+      fi
+    - /build/build.sh
+
+build ubi8-base:
+  extends: .build container
+  variables:
+    DOCKERFILE_PATH: rp-ubi8-base/Dockerfile
+    CONTAINER_NAME: rp-ubi8-base
+
+build ubi8-jdk8:
+  extends: .build container
+  variables:
+    DOCKERFILE_PATH: rp-ubi8-jdk8/Dockerfile
+    CONTAINER_NAME: ubi8-jdk8
+
+build ubi8-maven3:
+  extends: .build container
+  variables:
+    DOCKERFILE_PATH: rp-ubi8-maven3/Dockerfile
+    CONTAINER_NAME: ubi8-maven3
