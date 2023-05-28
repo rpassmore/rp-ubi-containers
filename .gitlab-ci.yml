@@ -27,10 +27,10 @@ build ubi8-jdk8:
   extends: .build container
   variables:
     DOCKERFILE_PATH: rp-ubi8-jdk8/Dockerfile
-    CONTAINER_NAME: ubi8-jdk8
+    CONTAINER_NAME: rp-ubi8-jdk8
 
 build ubi8-maven3:
   extends: .build container
   variables:
     DOCKERFILE_PATH: rp-ubi8-maven3/Dockerfile
-    CONTAINER_NAME: ubi8-maven3
+    CONTAINER_NAME: rp-ubi8-maven3
