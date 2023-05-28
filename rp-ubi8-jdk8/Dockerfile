@@ -1,4 +1,4 @@
-FROM rp-base:0.0.1
+FROM registry.gitlab.com/rpassmore/rp-ubi-containers/rp-ubi8-base:0.0.1
 
 USER root
 
@@ -12,4 +12,4 @@ ENV \
   JAVA_VERSION="1.8.0" 
 
 
-USER default
+USER 185
