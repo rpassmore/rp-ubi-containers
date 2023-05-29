@@ -1,7 +1,8 @@
 name: Build & publish rp-ubi images
-on:
-  release:
-    types: [published]
+on: [push]
+# on:
+#   release:
+#     types: [published]
 
 env:
   REGISTRY: ghcr.io
