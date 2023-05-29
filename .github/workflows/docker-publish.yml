@@ -19,7 +19,8 @@ jobs:
   build-and-push-image:
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
+      fail-fast: true
+      max-parallel: 1
       matrix:
         include:
           - dockerfile: ./rp-ubi8-base/Dockerfile
