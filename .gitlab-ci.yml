@@ -34,7 +34,7 @@
             SANITIZED="${NOSLASH//[^a-zA-Z0-9-]/}"
             VERSION="branch-$SANITIZED"
           fi
-        export IMAGE_TAG=$CI_REGISTRY_IMAGE:$VERSION
+        export IMAGE_TAG=$CI_REGISTRY_IMAGE/$CONTAINER_NAME:$VERSION
       fi
     - echo $IMAGE_TAG
     - mkdir -p /kaniko/.docker
