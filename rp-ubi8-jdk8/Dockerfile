@@ -1,4 +1,5 @@
-FROM registry.gitlab.com/rpassmore/rp-ubi-containers/rp-ubi8-base:0.0.1
+#FROM registry.gitlab.com/rpassmore/rp-ubi-containers/rp-ubi8-base:0.0.1
+FROM  ghcr.io/rpassmore/rp-ubi-containers/rp-ubi8-base:0.0.1
 
 USER root
 
