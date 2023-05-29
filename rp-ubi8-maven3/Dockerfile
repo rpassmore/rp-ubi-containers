@@ -1,4 +1,5 @@
-FROM registry.gitlab.com/rpassmore/rp-ubi-containers/rp-ubi8-jdk8:0.0.1
+#FROM registry.gitlab.com/rpassmore/rp-ubi-containers/rp-ubi8-jdk8:0.0.1
+FROM  ghcr.io/rpassmore/rp-ubi-containers/rp-ubi8-jdk8:0.0.1
 
 ARG MAVEN_VERSION=3.6.3
 ARG BASE_URL=https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/
