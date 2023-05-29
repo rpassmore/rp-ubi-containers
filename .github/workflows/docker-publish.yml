@@ -25,9 +25,9 @@ jobs:
         include:
           - dockerfile: ./rp-ubi8-base/Dockerfile
             image: ghcr.io/rpassmore/rp-ubi-containers/rp-ubi8-base
-          - dockerfile: ./src/rp-ubi8-jdk8/Dockerfile
+          - dockerfile: ./rp-ubi8-jdk8/Dockerfile
             image: ghcr.io/rpassmore/rp-ubi-containers/rp-ubi8-jdk8          
-          - dockerfile: ./src/rp-ubi8-maven3/Dockerfile
+          - dockerfile: ./rp-ubi8-maven3/Dockerfile
             image: ghcr.io/rpassmore/rp-ubi-containers/rp-ubi8-maven3  
     permissions:
       contents: read
