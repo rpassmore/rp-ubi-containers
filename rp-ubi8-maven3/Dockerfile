@@ -6,9 +6,8 @@ ARG BASE_URL=https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/bina
 
 USER root
         # Install packages defined in the 'jboss.container.maven' module
-RUN microdnf --setopt=install_weak_deps=0 --setopt=tsflags=nodocs --disableplugin=subscription-manager install -y tar gzip \
-   && microdnf clean all \
-   && rpm -q tar gzip
+RUN microdnf --setopt=install_weak_deps=0 --setopt=tsflags=nodocs --disableplugin=subscription-manager install -y tar-1.30-9.el8.x86_64 gzip-1.9-13.el8_5.x86_64 \
+   && microdnf clean all
 
 
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref && \
