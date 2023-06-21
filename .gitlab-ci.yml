@@ -67,3 +67,11 @@ build ubi8-maven3:
   variables:
     DOCKERFILE_PATH: rp-ubi8-maven3/Dockerfile
     CONTAINER_NAME: rp-ubi8-maven3
+
+build ubi8-node:
+  stage: docker
+  extends: .kaniko-build
+  variables:
+    DOCKERFILE_PATH: rp-ubi8-nodejs/Dockerfile
+    CONTAINER_NAME: rp-ubi8-node
+
