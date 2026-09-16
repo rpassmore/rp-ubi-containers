@@ -1,3 +1,3 @@
-FROM registry.access.redhat.com/ubi8/ubi-minimal:8.8-1014
+FROM registry.access.redhat.com/ubi8/ubi-minimal:8.10-1789521592
 #FROM ubi8/ubi-minimal7
 
